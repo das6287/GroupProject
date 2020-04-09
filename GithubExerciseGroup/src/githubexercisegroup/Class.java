@@ -51,19 +51,14 @@ public class Class {
         Student studentObject = new Student(name, year, grade, age);
         //Add new student
         Student[] newStudents1 = new Student[students.length+1];
-        for (int i2=0; i2<students.length; i2++) {
-            newStudents1[i2] = students[i2];
+        for (int i=0; i<students.length; i++) {
+            newStudents1[i] = students[i];
         }
+        newStudents1[students.length] = studentObject;
         
         students = new Student[newStudents1.length];
-        for (int i3=0; i3<newStudents1.length; i3++) {
-            students[i3] = newStudents1[i3];
-        }
-        for(int i = 0; i < students.length; i++) {
-            newStudents1[i] = studentObject;
-            for (int j = i; j <students.length+1; j++) {
-                    students[j] = students[j-1];
-                }
+        for (int i=0; i < newStudents1.length; i++) {
+            students[i] = newStudents1[i];
         }
         
         // Change count
