@@ -160,7 +160,7 @@ public class MainOrganizer {
         int choice2 = 1;
             
         // Get User Choice 2
-        System.out.print("Would you like to organize by name (1), year (2), or grade (3)?: ");
+        System.out.print("Would you like to organize by name (1), year (2), grade (3), or age (4)?: ");
         choice2 = scan.nextInt();
         switch(choice2) {
             case 1: {
@@ -211,6 +211,21 @@ public class MainOrganizer {
                 }
                 break;
             }
+            case 4:
+                // Organize by age
+                Student tempStud;
+                for (int i = 0; i<origStuds.length; i++) {
+                    for (int j = 1; j<origStuds.length-i; j++) {
+                        int age1 = origStuds[j-1].getAge();
+                        int age2 = origStuds[j].getAge();
+                        if (age1 > age2) {
+                            tempStud = origStuds[j-1];
+                            origStuds[j-1] = origStuds[j];
+                            origStuds[j] = tempStud;
+                        }
+                    }
+                }
+                break;
             default: {
                 // Invalid entry
                 System.out.println("Error, invalid entry. Please try again.");
