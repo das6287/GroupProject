@@ -49,10 +49,12 @@ public class Class {
         // Create code to...
         // Add student to list using given info (Parameters may change)
         Student studentObject = new Student(name, year, grade, age);
+        //Add new student
         Student[] newStudents1 = new Student[students.length+1];
         for (int i2=0; i2<students.length+1; i2++) {
             newStudents1[i2] = students[i2];
         }
+        
         students = new Student[newStudents1.length];
         for (int i3=0; i3<newStudents1.length; i3++) {
             students[i3] = newStudents1[i3];
@@ -60,7 +62,7 @@ public class Class {
         for(int i = 0; i < students.length; i++) {
             newStudents1[i] = studentObject;
             for (int j = i; j <students.length+1; j++) {
-                    students[j] = students[j+1];
+                    students[j] = students[j-1];
                 }
         }
         
