@@ -49,20 +49,21 @@ public class Class {
         // Create code to...
         // Add student to list using given info (Parameters may change)
         Student studentObject = new Student(name, year, grade, age);
+        Student[] newStudents1 = new Student[students.length+1];
+        for (int i2=0; i2<students.length+1; i2++) {
+            newStudents1[i2] = students[i2];
+        }
+        students = new Student[newStudents1.length];
+        for (int i3=0; i3<newStudents1.length; i3++) {
+            students[i3] = newStudents1[i3];
+        }
         for(int i = 0; i < students.length; i++) {
-            students[i] = studentObject;
+            newStudents1[i] = studentObject;
             for (int j = i; j <students.length+1; j++) {
                     students[j] = students[j+1];
                 }
         }
-        Student[] newStudents = new Student[students.length+1];
-        for (int i2=0; i2<students.length+1; i2++) {
-            newStudents[i2] = students[i2];
-        }
-        students = new Student[newStudents.length];
-        for (int i3=0; i3<newStudents.length; i3++) {
-            students[i3] = newStudents[i3];
-        }
+        
         // Change count
         studentCount = students.length;
     }
