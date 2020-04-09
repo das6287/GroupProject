@@ -48,8 +48,12 @@ public class Class {
     public void addStudent(String name, int year, int grade, int age) {
         // Create code to...
         // Add student to list using given info (Parameters may change)
+        Student studentObject = new Student(name, year, grade, age);
         for(int i = 0; i < students.length; i++) {
-            students[i] = 
+            students[i] = studentObject;
+            for (int j = i; j <students.length+1; j++) {
+                    students[j] = students[j+1];
+                }
     }
         // Change count
         studentCount = students.length;
