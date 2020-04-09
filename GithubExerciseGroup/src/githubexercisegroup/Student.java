@@ -8,7 +8,7 @@
  * @version 1.0 <Date>
  */
 // Packages
-package githubexercise;
+package githubexercisegroup;
 
 // Student - Java Class
 public class Student {
@@ -16,8 +16,8 @@ public class Student {
     private String name; // Student Name
     private int year; // Student Year
     private int grade; // Student Grade (0-100)
-    // Create code to...
-    // Add one new student attributes
+    private int age; //Student Age
+    
     
     // Constructors
     public Student() {
@@ -25,16 +25,14 @@ public class Student {
         name = "John Doe";
         year = 1;
         grade = 0;
-        // Create code to...
-        // Assign new default attribute
+        age = 0;
     }
-    public Student(String studentName, int studentYear, int studentGrade) {
+    public Student(String studentName, int studentYear, int studentGrade, int studentAge) {
         // Assign give info (Parameters may change)
         name = studentName;
         year = studentYear;
         grade = studentGrade;
-        // Create code to...
-        // Assign new attribute
+        age = studentAge;
     }
     
     // Accessors
@@ -62,9 +60,15 @@ public class Student {
     public int getGrade() {
         return grade;
     }
-    // Create code to...
-    // Add a new accessor method for new attribute
-    
+    /**
+     * This method returns the age of the student
+     * 
+     * @return age of the student
+     */
+    public int getAge(){
+        return age;
+    }
+       
     // Mutators
     /**
      * This method sets the name of the student
@@ -90,8 +94,14 @@ public class Student {
     public void setGrade(int newGrade) {
         grade = newGrade;
     }
-    // Create code to...
-    // Add a new mutator method for new attribute
+    /**
+     * This method sets the age of the student
+     * 
+     * @param newAge new age of the student
+     */
+    public void setAge(int newAge){
+        age = newAge;
+    }
     
     // String Method
     /**
@@ -104,7 +114,7 @@ public class Student {
         // Create printed string
         // Create code to...
         // Add on new attribute to string
-        String studentInfo = name + ", Year " + year + ", Grade " + grade;
+        String studentInfo = name + ", Year " + year + ", Grade " + grade + ", Age " + age;
         return studentInfo;
     }
 }
