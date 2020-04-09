@@ -82,7 +82,7 @@ public class MainOrganizer {
                         scan.nextLine();
                     } 
                    
-                    // studentClass.addStudent(newName, newYear, newGrade);
+                    studentClass.addStudent(newName, newYear, newGrade);
                     break;
                 }
                 case 2: {
@@ -90,7 +90,7 @@ public class MainOrganizer {
                     System.out.println("Enter the name of the student to be removed: ");
                     String findName = scan.nextLine();
                     
-                    // studentClass.removeStudent(findName);
+                    studentClass.removeStudent(findName);
                     break;
                 }
                 case 3: {
