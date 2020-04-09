@@ -8,7 +8,7 @@
  * @version 1.0 <Date>
  */
 // Packages
-package githubexercise;
+package githubexercisegroup;
 
 // Class - Java Class
 public class Class {
@@ -43,11 +43,14 @@ public class Class {
      * @param name Name of student
      * @param year Year of student
      * @param grade Grade of student
+     * @param age Age of student
      */
-    public void addStudent(String name, int year, int grade) {
+    public void addStudent(String name, int year, int grade, int age) {
         // Create code to...
         // Add student to list using given info (Parameters may change)
-        
+        for(int i = 0; i < students.length; i++) {
+            students[i] = 
+    }
         // Change count
         studentCount = students.length;
     }
