@@ -31,6 +31,7 @@ public class MainOrganizer {
             System.out.print("Would you like to add a student (1), remove a student " +
                             "(2), organize the class (3), display the class (4), or exit (0)?: ");
             choice = scan.nextInt();
+            scan.nextLine();
             switch(choice) {
                 case 1: {
                     
@@ -90,15 +91,15 @@ public class MainOrganizer {
                             newAge = scan.nextInt();
                             if(newAge < 0) {
                                 proceed = false;
-                                System.out.println("Grade not in valid range. ");
-                                System.out.println("Please enter a valid grade (0 - 100): ");
+                                System.out.println("Age not in valid range.");
+                                System.out.println("Please enter a valid age (>0): ");
                             } else {
                                 proceed = true;                            
                             }
                         }
                         catch(Exception exp) {
-                            System.out.println("Please enter an integer. ");
-                            System.out.println("Please enter a valid grade (0 - 100): ");
+                            System.out.println("Please enter an integer.");
+                            System.out.println("Please enter a valid age: ");
                             proceed = false;
                         }
                         scan.nextLine();
