@@ -80,9 +80,31 @@ public class MainOrganizer {
                             proceed = false;
                         }
                         scan.nextLine();
-                    } 
+                    }
+                    
+                    System.out.println("Enter the age of the student to be added: ");         
+                    int newAge = -1;
+                    proceed = false;
+                    while(proceed == false) {
+                        try {
+                            newAge = scan.nextInt();
+                            if(newAge < 0) {
+                                proceed = false;
+                                System.out.println("Grade not in valid range. ");
+                                System.out.println("Please enter a valid grade (0 - 100): ");
+                            } else {
+                                proceed = true;                            
+                            }
+                        }
+                        catch(Exception exp) {
+                            System.out.println("Please enter an integer. ");
+                            System.out.println("Please enter a valid grade (0 - 100): ");
+                            proceed = false;
+                        }
+                        scan.nextLine();
+                    }
                    
-                    studentClass.addStudent(newName, newYear, newGrade);
+                    studentClass.addStudent(newName, newYear, newGrade, newAge);
                     break;
                 }
                 case 2: {
