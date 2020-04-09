@@ -4,11 +4,11 @@
  * Purpose: Takes in user input to determine program action, as well as organizes 
  * student class list depending on desired attribute
  * 
- * @author <Team Names>
- * @version 1.0 <Date>
+ * @author Joshua Haines
+ * @version 1.0 4/9/20
  */
 // Packages
-package githubexercise;
+package githubexercisegroup;
 
 // Imports
 import java.util.Scanner;
@@ -33,15 +33,62 @@ public class MainOrganizer {
             choice = scan.nextInt();
             switch(choice) {
                 case 1: {
-                    // Create code to...
-                    // Get user-entered info on new student and call add method 
+                    
+                    System.out.println("Enter the name of the student to be added: ");
+                    String newName = scan.nextLine();
+
+                    System.out.println("Enter the grade of the student to be added (0 - 100): ");         
+                    int newGrade = -1;
+                    boolean proceed = false;
+                    while(proceed == false) {
+                        try {
+                            newGrade = scan.nextInt();
+                            if(newGrade < 0 || newGrade > 100) {
+                                proceed = false;
+                                System.out.println("Grade not in valid range. ");
+                                System.out.println("Please enter a valid grade (0 - 100): ");
+                            } else {
+                                proceed = true;                            
+                            }
+                        }
+                        catch(Exception exp) {
+                            System.out.println("Please enter an integer. ");
+                            System.out.println("Please enter a valid grade (0 - 100): ");
+                            proceed = false;
+                        }
+                        scan.nextLine();
+                    } 
+
+                    System.out.println("Enter the year of the student to be added (1 - 4)\n" 
+                            + "1 = freshman, 2 = sophomore, 3 = junior, 4 = senior: ");         
+                    int newYear = -1;
+                    proceed = false;
+                    while(proceed == false) {
+                        try {
+                            newYear = scan.nextInt();
+                            if(newYear < 1 || newYear > 4) {
+                                proceed = false;
+                                System.out.println("Year not in valid range. ");
+                                System.out.println("Please enter a valid year (1 - 4): ");
+                            } else {
+                                proceed = true;
+                            }
+                        }
+                        catch(Exception exp) {
+                            System.out.println("Please enter an integer. ");
+                            System.out.println("Please enter a valid grade (1 - 4): ");
+                            proceed = false;
+                        }
+                        scan.nextLine();
+                    } 
                    
                     // studentClass.addStudent(newName, newYear, newGrade);
                     break;
                 }
                 case 2: {
-                    // Create code to...
-                    // Remove student using user-entered name
+                    
+                    System.out.println("Enter the name of the student to be removed: ");
+                    String findName = scan.nextLine();
                     
                     // studentClass.removeStudent(findName);
                     break;
