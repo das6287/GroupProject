@@ -51,7 +51,7 @@ public class Class {
         Student studentObject = new Student(name, year, grade, age);
         //Add new student
         Student[] newStudents1 = new Student[students.length+1];
-        for (int i2=0; i2<students.length+1; i2++) {
+        for (int i2=0; i2<students.length; i2++) {
             newStudents1[i2] = students[i2];
         }
         
